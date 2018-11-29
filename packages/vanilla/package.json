@@ -1,0 +1,9 @@
+{
+  "name": "vanilla-name-element",
+  "devDependencies": {
+    "local-web-server": "^2.6.0"
+  },
+  "scripts": {
+    "start": "ws"
+  }
+}
