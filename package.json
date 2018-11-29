@@ -1,0 +1,12 @@
+{
+  "name": "stencil-component-workshop",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^2.10.1"
+  }
+}
