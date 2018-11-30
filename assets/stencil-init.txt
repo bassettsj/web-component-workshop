@@ -1,0 +1,12 @@
+npm create stencil
+✔ Pick a starter › component
+✔ Project name › my-component
+
+✔ All setup  in 1 ms
+
+  Next steps:
+   $ cd my-component
+   $ npm start
+
+  Further reading:
+   - https://github.com/ionic-team/stencil-component-starter
