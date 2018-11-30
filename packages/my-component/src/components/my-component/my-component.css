@@ -1,0 +1,19 @@
+:host {
+  --padding: 1em;
+  padding: var(--padding);
+  border-radius: 4px;
+  box-shadow: 0 0 1px var(--dark-grey);
+  display: block;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--light-grey);
+}
+h3 {
+  flex-grow: 1;
+}
+.collapse.collapsed {
+  display: none;
+}
