@@ -41,3 +41,72 @@ export function format(first: string, middle: string, last: string): string {
     (last ? ` ${last}` : '')
   );
 }
+
+// DeckDeckGo
+import { Component, Prop, State, Listen} from '@stencil/core';
+import { format } from '../../utils/utils';
+
+@Component({
+  tag: 'my-component',
+  styleUrl: 'my-component.css',
+  shadow: true
+})
+export class MyComponent {
+  /**
+   * The first name
+   */
+  @Prop() first: string;
+
+  /**
+   * The middle name
+   */
+  @Prop() middle: string;
+
+  /**
+   * The last name
+   */
+  @Prop() last: string;
+  // DeckDeckGo
+  @State() toggled: boolean = true;
+  // DeckDeckGo
+  @Listen('toggle')
+  onToggle(ev: CustomEvent<'toggle'>) {
+    ev.stopPropagation();
+    this.toggled = !this.toggled;
+  }
+  // DeckDeckGo
+  private getText(): string {
+    return format(this.first, this.middle, this.last);
+  }
+  // DeckDeckGo
+  render() {
+    return (
+      <div>
+        <header>
+          <h3>Hello, World! I'm {this.getText()}</h3>
+          <my-component-toggle toggled={this.toggled}></my-component-toggle>
+        </header>
+        <div class={{collapsed: this.toggled, collapse: true  }}>
+          <slot />
+        </div>
+      </div>
+    );
+  }
+}
+
+// DeckDeckGo
+import { Component, Event, EventEmitter, Prop, } from '@stencil/core';
+
+@Component({ tag: 'my-component-toggle', styleUrl: './toggle.css', shadow: true })
+export class ComponentToggle {
+  @Event() toggle: EventEmitter;
+  @Prop() toggled: boolean = false;
+  // DeckDeckGo
+  render() {
+    return (
+      <button onClick={this.toggle.emit}>
+        {this.toggled ? '⬇️' : '⬆️'}
+      </button>
+    );
+  }
+}
