@@ -47,25 +47,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <style>
-        /* Until Web Components are loaded, don't display content */
-        body {
-            background: #3880ff;
-        }
-
-        ion-app.loading, ion-app.loading a {
-            color: transparent;
-        }
-
-        ion-app.loading a {
-            color: transparent;
-        }
-
-        ion-app.loading {
-            display: none;
-        }
-    </style>
-
 </head>
 <body>
 
@@ -96,12 +77,16 @@
               <h2 slot="title">Repository Structure</h2>
             </deckgo-slide-code>
 
-            <deckgo-slide-code>
-                <h2 slot="title">Vanilla</h2>
+            <deckgo-slide-code src-file="./assets/vanilla-component.txt">
+              <h2 slot="title">Vanilla</h2>
             </deckgo-slide-code>
 
-            <deckgo-slide-code>
-                <h2 slot="title">Create stencil</h2>
+            <deckgo-slide-code src-file="./assets/stencil-init.txt">
+              <h2 slot="title">Stencil</h2>
+            </deckgo-slide-code>
+
+            <deckgo-slide-code src-file="./assets/stencil-component.txt">
+              <h2 slot="title">My First Component</h2>
             </deckgo-slide-code>
 
             <!-- <deckgo-slide-title>
