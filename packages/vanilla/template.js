@@ -40,9 +40,12 @@ template.innerHTML = `
       justify-self: end;
       align-self: center;
     }
+    .cursor-pointer {
+      cursor: pointer;
+    }
 
   </style>
-  <header class="wrapper">
+  <header class="wrapper cursor-pointer">
     <div class="name">
       <h3><span id="first"></span> <span id="last"></span></h3>
     </div>
