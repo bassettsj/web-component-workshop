@@ -13,21 +13,46 @@ template.innerHTML = `
       border-bottom: solid 1px #333;
     }
 
+    #collapseTarget {
+      height: 100px;
+    }
+
     .collapse {
       transition-property: height;
-      transition-duration: 1;
+      transition-duration: 1s;
+      transition-timing-function: ease-in-out;
       overflow: hidden;
     }
 
     .collapse.collapsed {
-      height: 0;
+      height: 0 !important;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .name {
+      grid-column: 1;
+    }
+    .show-info {
+      grid-column: 2;
+      justify-self: end;
+      align-self: center;
+    }
+    .cursor-pointer {
+      cursor: pointer;
     }
 
   </style>
-  <header>
-    <h3><span id="first"></span> <span id="last"></span></h3>
-  </header>
-  <button type="button" id="toggle">More Info</button>
+  <header class="wrapper cursor-pointer">
+    <div class="name">
+      <h3><span id="first"></span> <span id="last"></span></h3>
+    </div>
+    <div class="show-info">
+      <button type="button" id="toggle">More Info</button>
+    </div>
+    </header>
   <div id="collapseTarget" class="collapse collapsed">
     <slot>Provide a description</slot>
   </div>
